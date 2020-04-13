@@ -6,46 +6,40 @@
 package br.edu.ifnmg.SistemaComercial.LogicaAplicacao;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 /**
  *
  * @author petronio
  */
 @Entity
-@Table(name="usuarios")
-public class Usuario implements Serializable {
+@Table(name="produtos")
+public class Produto implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    @Column(length=250, nullable=false, unique=true)
-    private String login;
+    @Column(length = 250, nullable = false, unique = true)
+    private String nome;
     
-    @Column(nullable=false)
-    private String senha;
-    
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date ultimoAcesso;
+    @Column(precision = 8, scale = 2)
+    private BigDecimal valorUnitario;
 
-    public Usuario() {
-        this.login = "";
-        this.senha = "";
-        this.ultimoAcesso = new Date();
+    public Produto() {
+        this.id = 0L;
+        this.nome = "";
+        this.valorUnitario = new BigDecimal("0.00");
     }
-    
+        
+
     public Long getId() {
         return id;
     }
@@ -54,31 +48,24 @@ public class Usuario implements Serializable {
         this.id = id;
     }
 
-    public String getLogin() {
-        return login;
+    public String getNome() {
+        return nome;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public String getSenha() {
-        return senha;
+    public BigDecimal getValorUnitario() {
+        return valorUnitario;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
-    public Date getUltimoAcesso() {
-        return ultimoAcesso;
-    }
-
-    public void setUltimoAcesso(Date ultimoAcesso) {
-        this.ultimoAcesso = ultimoAcesso;
+    public void setValorUnitario(BigDecimal valorUnitario) {
+        this.valorUnitario = valorUnitario;
     }
     
     
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -89,10 +76,10 @@ public class Usuario implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Usuario)) {
+        if (!(object instanceof Produto)) {
             return false;
         }
-        Usuario other = (Usuario) object;
+        Produto other = (Produto) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -101,7 +88,7 @@ public class Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return this.login;
+        return this.nome;
     }
     
 }

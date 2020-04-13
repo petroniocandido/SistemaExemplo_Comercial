@@ -5,15 +5,10 @@
  */
 package br.edu.ifnmg.SistemaComercial.LogicaAplicacao;
 
-import java.util.List;
-
 /**
  *
  * @author petronio
  */
-public interface Repositorio<T> {
-    public boolean Salvar(T obj);
-    public boolean Apagar(T obj);
-    public T Abrir(Long id);
-    public List<T> Buscar(T obj);
+public interface TransacaoRepositorio extends Repositorio<Transacao> {
+    
 }

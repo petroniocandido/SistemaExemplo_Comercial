@@ -10,5 +10,5 @@ package br.edu.ifnmg.SistemaComercial.LogicaAplicacao;
  * @author petronio
  */
 public interface UsuarioRepositorio extends Repositorio<Usuario> {
-    public boolean login(String usuario, String senha);
+    public boolean autenticar(String login, String senha);
 }

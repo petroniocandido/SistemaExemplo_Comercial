@@ -1,4 +1,10 @@
-/home/petronio/Desktop/SistemaComercial_LogicaAplicacao/src/main/java/br/edu/ifnmg/SistemaComercial/LogicaAplicacao/Repositorio.java
-/home/petronio/Desktop/SistemaComercial_LogicaAplicacao/src/main/java/br/edu/ifnmg/SistemaComercial/LogicaAplicacao/Repositorios.java
-/home/petronio/Desktop/SistemaComercial_LogicaAplicacao/src/main/java/br/edu/ifnmg/SistemaComercial/LogicaAplicacao/UsuarioRepositorio.java
-/home/petronio/Desktop/SistemaComercial_LogicaAplicacao/src/main/java/br/edu/ifnmg/SistemaComercial/LogicaAplicacao/Usuario.java
+/home/petronio/Desktop/SistemaExemplo_Comercial/SistemaComercial_LogicaAplicacao/src/main/java/br/edu/ifnmg/SistemaComercial/LogicaAplicacao/Transacao.java
+/home/petronio/Desktop/SistemaExemplo_Comercial/SistemaComercial_LogicaAplicacao/src/main/java/br/edu/ifnmg/SistemaComercial/LogicaAplicacao/ProdutoRepositorio.java
+/home/petronio/Desktop/SistemaExemplo_Comercial/SistemaComercial_LogicaAplicacao/src/main/java/br/edu/ifnmg/SistemaComercial/LogicaAplicacao/Repositorio.java
+/home/petronio/Desktop/SistemaExemplo_Comercial/SistemaComercial_LogicaAplicacao/src/main/java/br/edu/ifnmg/SistemaComercial/LogicaAplicacao/UsuarioRepositorio.java
+/home/petronio/Desktop/SistemaExemplo_Comercial/SistemaComercial_LogicaAplicacao/src/main/java/br/edu/ifnmg/SistemaComercial/LogicaAplicacao/PessoaRepositorio.java
+/home/petronio/Desktop/SistemaExemplo_Comercial/SistemaComercial_LogicaAplicacao/src/main/java/br/edu/ifnmg/SistemaComercial/LogicaAplicacao/Produto.java
+/home/petronio/Desktop/SistemaExemplo_Comercial/SistemaComercial_LogicaAplicacao/src/main/java/br/edu/ifnmg/SistemaComercial/LogicaAplicacao/TransacaoItem.java
+/home/petronio/Desktop/SistemaExemplo_Comercial/SistemaComercial_LogicaAplicacao/src/main/java/br/edu/ifnmg/SistemaComercial/LogicaAplicacao/TransacaoRepositorio.java
+/home/petronio/Desktop/SistemaExemplo_Comercial/SistemaComercial_LogicaAplicacao/src/main/java/br/edu/ifnmg/SistemaComercial/LogicaAplicacao/Pessoa.java
+/home/petronio/Desktop/SistemaExemplo_Comercial/SistemaComercial_LogicaAplicacao/src/main/java/br/edu/ifnmg/SistemaComercial/LogicaAplicacao/Usuario.java
