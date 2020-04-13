@@ -22,7 +22,6 @@ public class TransacaoDAO
         super(Transacao.class);
     }
     
-
     @Override
     public List<Transacao> Buscar(Transacao obj) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

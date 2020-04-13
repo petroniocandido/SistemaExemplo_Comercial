@@ -8,7 +8,6 @@
     <class>br.edu.ifnmg.SistemaComercial.LogicaAplicacao.TransacaoItem</class>
     <class>br.edu.ifnmg.SistemaComercial.LogicaAplicacao.Usuario</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
-    <validation-mode>NONE</validation-mode>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/SistemaComercial?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

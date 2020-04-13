@@ -37,28 +37,31 @@ public class Transacao implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
-    @JoinColumn(name = "pessoaid", nullable = false)
+    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+    @JoinColumn(name = "pessoa_id", nullable = false)
     private Pessoa pessoa;
     
-    @Column(precision = 8, scale = 2)
-    private BigDecimal valorTotal;
-    
     @Temporal(TemporalType.TIMESTAMP)
-    private Date datacriacao;
+    public Date criacao;
+    
+    @Column(precision = 8, scale = 2)
+    public BigDecimal valorTotal;
     
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,
-            mappedBy = "transacaoid")
+            mappedBy = "transacao")
     private List<TransacaoItem> itens;
 
     public Transacao() {
         this.id = 0L;
         this.pessoa = null;
         this.valorTotal = new BigDecimal("0.00");
-        this.datacriacao = new Date();
+        this.criacao = new Date();
         this.itens = new ArrayList<>();
     }
     
+    
+    
+
     public Long getId() {
         return id;
     }
@@ -75,20 +78,20 @@ public class Transacao implements Serializable {
         this.pessoa = pessoa;
     }
 
+    public Date getCriacao() {
+        return criacao;
+    }
+
+    public void setCriacao(Date criacao) {
+        this.criacao = criacao;
+    }
+
     public BigDecimal getValorTotal() {
         return valorTotal;
     }
 
     public void setValorTotal(BigDecimal valorTotal) {
         this.valorTotal = valorTotal;
-    }
-
-    public Date getData() {
-        return datacriacao;
-    }
-
-    public void setData(Date data) {
-        this.datacriacao = data;
     }
 
     public List<TransacaoItem> getItens() {
@@ -99,17 +102,24 @@ public class Transacao implements Serializable {
         this.itens = itens;
     }
     
-    
-    public void add(TransacaoItem item){
-        this.itens.add(item);
-        this.valorTotal = this.valorTotal.add(item.getValorUnitario());
+    public boolean add(TransacaoItem item){
+        if(! this.itens.contains(item)){
+            this.itens.add(item);
+            this.valorTotal = this.valorTotal.add(
+                    item.getValorUnitario().multiply(BigDecimal.valueOf(item.getQuantidade())));
+            return true;
+        }
+        return false;
     }
     
-    public void remove(TransacaoItem item){
+    public boolean remove(TransacaoItem item){
         if(this.itens.contains(item)){
             this.itens.remove(item);
-            this.valorTotal = this.valorTotal.subtract(item.getValorUnitario());
+            this.valorTotal = this.valorTotal.subtract(
+                    item.getValorUnitario().multiply(BigDecimal.valueOf(item.getQuantidade())));
+            return true;
         }
+        return false;
     }
 
     @Override
@@ -134,7 +144,7 @@ public class Transacao implements Serializable {
 
     @Override
     public String toString() {
-        return "br.edu.ifnmg.SistemaComercial.LogicaAplicacao.Transacao[ id=" + id + " ]";
+        return this.id.toString();
     }
     
 }

@@ -7,12 +7,11 @@ package br.edu.ifnmg.SistemaComercial.LogicaAplicacao;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -25,11 +24,15 @@ import javax.persistence.Table;
 public class TransacaoItem implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
     
-    @ManyToOne(fetch = FetchType.EAGER)
+    @Id
+    @ManyToOne
+    @JoinColumn(name = "transacao_id", nullable = false)
+    private Transacao transacao;
+    
+    @Id
+    @ManyToOne
+    @JoinColumn(name = "produto_id", nullable = false)
     private Produto produto;
     
     private int quantidade;
@@ -38,18 +41,24 @@ public class TransacaoItem implements Serializable {
     private BigDecimal valorUnitario;
 
     public TransacaoItem() {
-        this.id = 0L;
         this.produto = null;
+        this.transacao = null;
         this.quantidade = 0;
         this.valorUnitario = new BigDecimal("0.00");
     }
 
-    public Long getId() {
-        return id;
+    public TransacaoItem(Produto produto, int quantidade) {
+        this.produto = produto;
+        this.quantidade = quantidade;
+        this.valorUnitario = this.produto.getValorUnitario();
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public Transacao getTransacao() {
+        return transacao;
+    }
+
+    public void setTransacao(Transacao transacao) {
+        this.transacao = transacao;
     }
 
     public Produto getProduto() {
@@ -75,24 +84,31 @@ public class TransacaoItem implements Serializable {
     public void setValorUnitario(BigDecimal valorUnitario) {
         this.valorUnitario = valorUnitario;
     }
-    
-    
 
     @Override
     public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        int hash = 5;
+        hash = 71 * hash + Objects.hashCode(this.transacao);
+        hash = 71 * hash + Objects.hashCode(this.produto);
         return hash;
     }
 
     @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof TransacaoItem)) {
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
             return false;
         }
-        TransacaoItem other = (TransacaoItem) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final TransacaoItem other = (TransacaoItem) obj;
+        if (!Objects.equals(this.transacao, other.transacao)) {
+            return false;
+        }
+        if (!Objects.equals(this.produto, other.produto)) {
             return false;
         }
         return true;
@@ -100,7 +116,9 @@ public class TransacaoItem implements Serializable {
 
     @Override
     public String toString() {
-        return "br.edu.ifnmg.SistemaComercial.LogicaAplicacao.TransacaoItem[ id=" + id + " ]";
+        return "transacaoitem";
     }
+    
+    
     
 }

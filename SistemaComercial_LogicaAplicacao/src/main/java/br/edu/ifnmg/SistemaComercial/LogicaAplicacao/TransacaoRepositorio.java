@@ -9,6 +9,8 @@ package br.edu.ifnmg.SistemaComercial.LogicaAplicacao;
  *
  * @author petronio
  */
-public interface TransacaoRepositorio extends Repositorio<Transacao> {
+public interface TransacaoRepositorio 
+        extends Repositorio<Transacao>
+{
     
 }
