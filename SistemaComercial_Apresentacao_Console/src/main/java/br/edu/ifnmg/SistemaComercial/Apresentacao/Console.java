@@ -5,9 +5,7 @@
  */
 package br.edu.ifnmg.SistemaComercial.Apresentacao;
 
-import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.Repositorios;
-import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.Usuario;
-import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.UsuarioRepositorio;
+import br.edu.ifnmg.SistemaComercial.Persistencia.UsuarioDAO;
 
 /**
  *
@@ -20,16 +18,8 @@ public class Console {
      */
     public static void main(String[] args) {
         
-        UsuarioRepositorio repo_usuarios  = Repositorios.getUsuarios();
-        
-        Usuario pc = new Usuario();
-        
-        pc.setLogin("petronio");
-        pc.setSenha("123");
-        
-        if(repo_usuarios.Salvar(pc)){
-            System.out.print("Funcionou");
-        } else System.out.print("Deu erro!");
+        UsuarioDAO repo = new UsuarioDAO();
+  
         
     }
     

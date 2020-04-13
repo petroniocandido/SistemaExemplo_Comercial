@@ -8,11 +8,6 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>SistemaComercial_LogicaAplicacao</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
             <artifactId>SistemaComercial_Persistencia</artifactId>
             <version>${project.version}</version>
         </dependency>
