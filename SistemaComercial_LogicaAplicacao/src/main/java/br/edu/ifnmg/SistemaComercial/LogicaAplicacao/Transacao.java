@@ -7,6 +7,7 @@ package br.edu.ifnmg.SistemaComercial.LogicaAplicacao;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -44,7 +45,7 @@ public class Transacao implements Serializable {
     private BigDecimal valorTotal;
     
     @Temporal(TemporalType.TIMESTAMP)
-    private Date data;
+    private Date datacriacao;
     
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,
             mappedBy = "transacaoid")
@@ -54,7 +55,8 @@ public class Transacao implements Serializable {
         this.id = 0L;
         this.pessoa = null;
         this.valorTotal = new BigDecimal("0.00");
-        this.data = new Date();
+        this.datacriacao = new Date();
+        this.itens = new ArrayList<>();
     }
     
     public Long getId() {
@@ -82,11 +84,11 @@ public class Transacao implements Serializable {
     }
 
     public Date getData() {
-        return data;
+        return datacriacao;
     }
 
     public void setData(Date data) {
-        this.data = data;
+        this.datacriacao = data;
     }
 
     public List<TransacaoItem> getItens() {
