@@ -15,39 +15,50 @@ import javax.persistence.Persistence;
  *
  * @author petronio
  */
-public class DataAccessObject<T> implements Repositorio<T> {
+public abstract class DataAccessObject<T> implements Repositorio<T> {
     
-    // Tipo da Entidade
-    private Class tipo;
-    
-    // Gerenciador de Entidades
     private EntityManager manager;
+    private Class type;
     
-    public DataAccessObject(Class tipo){
+    public DataAccessObject(Class type){
         var factory = Persistence.createEntityManagerFactory("UP");
         this.manager = factory.createEntityManager();
-        this.tipo = tipo;
+        this.type = type;
     }
 
     @Override
     public boolean Salvar(T obj) {
-        // Pega uma transação com o manager
         EntityTransaction transacao = this.manager.getTransaction();
         try {
-            // Iniciar a transação
             transacao.begin();
             
-            // Persistir o objeto
-            obj = this.manager.merge(obj);
+            this.manager.persist(obj);
             
-            // Confirma a transação
             transacao.commit();
             
             return true;
             
         } catch(Exception ex){
+            transacao.rollback();
             
-            // Cancela a transação
+            return false;
+        }
+        
+    }
+
+    @Override
+    public boolean Apagar(T obj) {
+        EntityTransaction transacao = this.manager.getTransaction();
+        try {
+            transacao.begin();
+            
+            this.manager.remove(obj);
+            
+            transacao.commit();
+            
+            return true;
+            
+        } catch(Exception ex){
             transacao.rollback();
             
             return false;
@@ -55,18 +66,17 @@ public class DataAccessObject<T> implements Repositorio<T> {
     }
 
     @Override
-    public boolean Apagar(T obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
     public T Abrir(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            
+            T obj = (T)this.manager.find(this.type, id);
+            
+            return obj;
+            
+        } catch(Exception ex){
+            return null;
+        }
     }
 
-    @Override
-    public List<T> Buscar(T filtro) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+    public abstract List<T> Buscar(T obj);
 }

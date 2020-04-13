@@ -7,19 +7,27 @@ package br.edu.ifnmg.SistemaComercial.Persistencia;
 
 import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.Usuario;
 import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.UsuarioRepositorio;
+import java.util.List;
 
 /**
  *
  * @author petronio
  */
-public class UsuarioDAO extends DataAccessObject<Usuario> implements UsuarioRepositorio {
+public class UsuarioDAO 
+        extends DataAccessObject<Usuario> 
+        implements UsuarioRepositorio {
 
-    public UsuarioDAO(){
+    public UsuarioDAO() {
         super(Usuario.class);
     }
-    
+
     @Override
-    public boolean login(String usuario, String senha) {
+    public boolean autenticar(String login, String senha) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Usuario> Buscar(Usuario obj) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
