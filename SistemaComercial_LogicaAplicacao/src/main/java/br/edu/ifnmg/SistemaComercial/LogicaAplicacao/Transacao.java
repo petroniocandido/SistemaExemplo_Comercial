@@ -13,6 +13,8 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,6 +25,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Version;
 
 /**
  *
@@ -50,17 +53,23 @@ public class Transacao implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,
             mappedBy = "transacao")
     private List<TransacaoItem> itens;
-
+    
+    @Enumerated(EnumType.ORDINAL)
+    @Column(nullable = false)
+    private TransacaoTipo tipo;
+    
+    @Version
+    private int version;
+    
     public Transacao() {
         this.id = 0L;
         this.pessoa = null;
         this.valorTotal = new BigDecimal("0.00");
         this.criacao = new Date();
         this.itens = new ArrayList<>();
+        this.tipo = TransacaoTipo.Venda;
+        this.version = 1;
     }
-    
-    
-    
 
     public Long getId() {
         return id;
@@ -121,6 +130,24 @@ public class Transacao implements Serializable {
         }
         return false;
     }
+
+    public TransacaoTipo getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TransacaoTipo tipo) {
+        this.tipo = tipo;
+    }
+
+    public int getVersion() {
+        return version;
+    }
+
+    public void setVersion(int version) {
+        this.version = version;
+    }
+    
+    
 
     @Override
     public int hashCode() {

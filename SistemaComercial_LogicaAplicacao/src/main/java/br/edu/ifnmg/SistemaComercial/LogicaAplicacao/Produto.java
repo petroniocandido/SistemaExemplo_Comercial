@@ -13,6 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Version;
 
 /**
  *
@@ -32,11 +33,15 @@ public class Produto implements Serializable {
     
     @Column(precision = 8, scale = 2)
     private BigDecimal valorUnitario;
+    
+    @Version
+    private int version;
 
     public Produto() {
         this.id = 0L;
         this.nome = "";
         this.valorUnitario = new BigDecimal("0.00");
+        this.version = 1;
     }
         
 

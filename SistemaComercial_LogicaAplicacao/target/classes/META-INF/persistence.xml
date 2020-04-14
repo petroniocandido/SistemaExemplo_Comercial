@@ -7,6 +7,8 @@
     <class>br.edu.ifnmg.SistemaComercial.LogicaAplicacao.Transacao</class>
     <class>br.edu.ifnmg.SistemaComercial.LogicaAplicacao.TransacaoItem</class>
     <class>br.edu.ifnmg.SistemaComercial.LogicaAplicacao.Usuario</class>
+    <class>br.edu.ifnmg.SistemaComercial.LogicaAplicacao.PessoaFisica</class>
+    <class>br.edu.ifnmg.SistemaComercial.LogicaAplicacao.PessoaJuridica</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/SistemaComercial?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
