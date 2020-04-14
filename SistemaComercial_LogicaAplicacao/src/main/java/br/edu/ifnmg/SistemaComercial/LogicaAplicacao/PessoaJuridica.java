@@ -13,6 +13,7 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.persistence.Version;
 
 /**
@@ -20,6 +21,7 @@ import javax.persistence.Version;
  * @author petronio
  */
 @Entity
+@Table(name="pessoasjuridicas")
 @DiscriminatorValue(value = "2")
 public class PessoaJuridica extends Pessoa implements Serializable {
 
