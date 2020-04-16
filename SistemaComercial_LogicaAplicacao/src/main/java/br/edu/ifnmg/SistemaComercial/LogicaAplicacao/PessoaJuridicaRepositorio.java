@@ -9,9 +9,8 @@ package br.edu.ifnmg.SistemaComercial.LogicaAplicacao;
  *
  * @author petronio
  */
-public enum TransacaoTipo {
-    Venda,
-    Compra,
-    Estorno,
-    Descarte
+public interface PessoaJuridicaRepositorio 
+        extends Repositorio<PessoaJuridica>
+{
+    
 }

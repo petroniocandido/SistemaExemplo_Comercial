@@ -37,7 +37,7 @@ public class Transacao implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
@@ -58,8 +58,11 @@ public class Transacao implements Serializable {
     @Column(nullable = false)
     private TransacaoTipo tipo;
     
+    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
+    private Usuario usuario;
+    
     @Version
-    private int version;
+    private long version;
     
     public Transacao() {
         this.id = 0L;
@@ -69,6 +72,17 @@ public class Transacao implements Serializable {
         this.itens = new ArrayList<>();
         this.tipo = TransacaoTipo.Venda;
         this.version = 1;
+    }
+
+    public Transacao(Pessoa pessoa, TransacaoTipo tipo, Usuario user) {
+        this.id = 0L;
+        this.pessoa = pessoa;
+        this.tipo = tipo;
+        this.usuario = user;
+        this.version = 1;
+        this.criacao = new Date();
+        this.itens = new ArrayList<>();
+        this.valorTotal = new BigDecimal("0.00");
     }
 
     public Long getId() {
@@ -112,6 +126,7 @@ public class Transacao implements Serializable {
     }
     
     public boolean add(TransacaoItem item){
+        item.setTransacao(this);
         if(! this.itens.contains(item)){
             this.itens.add(item);
             this.valorTotal = this.valorTotal.add(
@@ -139,16 +154,24 @@ public class Transacao implements Serializable {
         this.tipo = tipo;
     }
 
-    public int getVersion() {
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public long getVersion() {
         return version;
     }
 
-    public void setVersion(int version) {
+    public void setVersion(long version) {
         this.version = version;
     }
-    
-    
 
+    
+    
     @Override
     public int hashCode() {
         int hash = 0;

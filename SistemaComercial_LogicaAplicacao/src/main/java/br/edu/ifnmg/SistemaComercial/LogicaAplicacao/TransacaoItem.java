@@ -22,8 +22,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "transacoesitens")
 public class TransacaoItem implements Serializable {
-
-    private static final long serialVersionUID = 1L;
     
     @Id
     @ManyToOne
@@ -50,7 +48,7 @@ public class TransacaoItem implements Serializable {
     public TransacaoItem(Produto produto, int quantidade) {
         this.produto = produto;
         this.quantidade = quantidade;
-        this.valorUnitario = this.produto.getValorUnitario();
+        this.valorUnitario = produto.getValorUnitario();
     }
 
     public Transacao getTransacao() {

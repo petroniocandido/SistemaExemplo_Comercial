@@ -12,6 +12,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.SecondaryTable;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
@@ -21,11 +23,12 @@ import javax.persistence.Version;
  */
 @Entity
 @Table(name="produtos")
+@SecondaryTable(name = "estoques")
 public class Produto implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     @Column(length = 250, nullable = false, unique = true)
@@ -34,15 +37,32 @@ public class Produto implements Serializable {
     @Column(precision = 8, scale = 2)
     private BigDecimal valorUnitario;
     
+    @Column(nullable = false, table = "estoques")
+    private int estoque;
+    
     @Version
-    private int version;
+    private long version;
+    
+    @ManyToOne
+    private Usuario usuario;
 
     public Produto() {
         this.id = 0L;
         this.nome = "";
         this.valorUnitario = new BigDecimal("0.00");
+        this.estoque = 0;
         this.version = 1;
     }
+
+    public Produto(String nome, String valorUnitario, int estoque) {
+        this.id = 0L;
+        this.nome = nome;
+        this.valorUnitario = new BigDecimal(valorUnitario);
+        this.estoque = estoque;
+        this.version = 1;
+    }
+    
+    
         
 
     public Long getId() {
@@ -68,8 +88,22 @@ public class Produto implements Serializable {
     public void setValorUnitario(BigDecimal valorUnitario) {
         this.valorUnitario = valorUnitario;
     }
-    
-    
+
+    public long getVersion() {
+        return version;
+    }
+
+    public void setVersion(long version) {
+        this.version = version;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
 
     @Override
     public int hashCode() {

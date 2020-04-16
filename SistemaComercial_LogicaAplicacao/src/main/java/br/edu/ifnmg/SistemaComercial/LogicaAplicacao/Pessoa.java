@@ -32,7 +32,7 @@ public class Pessoa implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     @Column(nullable = false, length = 250)
@@ -42,7 +42,7 @@ public class Pessoa implements Serializable {
     private PessoaTipo tipo;
     
     @Version
-    private int version;
+    private long version;
 
     public Pessoa() {
         this.id = 0L;
@@ -72,20 +72,11 @@ public class Pessoa implements Serializable {
         return tipo;
     }
 
-    public void setTipo(PessoaTipo tipo) {
+    protected void setTipo(PessoaTipo tipo) {
         this.tipo = tipo;
     }
 
-    public int getVersion() {
-        return version;
-    }
-
-    public void setVersion(int version) {
-        this.version = version;
-    }
     
-    
-
     @Override
     public int hashCode() {
         int hash = 0;

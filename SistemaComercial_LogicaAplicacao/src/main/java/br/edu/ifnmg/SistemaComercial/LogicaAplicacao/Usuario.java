@@ -7,17 +7,15 @@ package br.edu.ifnmg.SistemaComercial.LogicaAplicacao;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Version;
 
 /**
  *
@@ -30,7 +28,7 @@ public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     @Column(length=250, nullable=false, unique=true)
@@ -42,10 +40,18 @@ public class Usuario implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date ultimoAcesso;
     
+    @Version
+    private long versao;
+    
     public Usuario() {
         this.login = "";
         this.senha = "";
         this.ultimoAcesso = new Date();
+    }
+
+    public Usuario(String login, String senha) {
+        this.login = login;
+        this.senha = senha;
     }
     
     public Long getId() {

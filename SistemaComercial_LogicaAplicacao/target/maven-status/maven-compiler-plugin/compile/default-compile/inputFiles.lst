@@ -1,4 +1,5 @@
 /home/petronio/Desktop/SistemaExemplo_Comercial/SistemaComercial_LogicaAplicacao/src/main/java/br/edu/ifnmg/SistemaComercial/LogicaAplicacao/Transacao.java
+/home/petronio/Desktop/SistemaExemplo_Comercial/SistemaComercial_LogicaAplicacao/src/main/java/br/edu/ifnmg/SistemaComercial/LogicaAplicacao/PessoaFisicaRepositorio.java
 /home/petronio/Desktop/SistemaExemplo_Comercial/SistemaComercial_LogicaAplicacao/src/main/java/br/edu/ifnmg/SistemaComercial/LogicaAplicacao/UsuarioRepositorio.java
 /home/petronio/Desktop/SistemaExemplo_Comercial/SistemaComercial_LogicaAplicacao/src/main/java/br/edu/ifnmg/SistemaComercial/LogicaAplicacao/PessoaTipo.java
 /home/petronio/Desktop/SistemaExemplo_Comercial/SistemaComercial_LogicaAplicacao/src/main/java/br/edu/ifnmg/SistemaComercial/LogicaAplicacao/PessoaRepositorio.java
@@ -10,5 +11,7 @@
 /home/petronio/Desktop/SistemaExemplo_Comercial/SistemaComercial_LogicaAplicacao/src/main/java/br/edu/ifnmg/SistemaComercial/LogicaAplicacao/Repositorio.java
 /home/petronio/Desktop/SistemaExemplo_Comercial/SistemaComercial_LogicaAplicacao/src/main/java/br/edu/ifnmg/SistemaComercial/LogicaAplicacao/Genero.java
 /home/petronio/Desktop/SistemaExemplo_Comercial/SistemaComercial_LogicaAplicacao/src/main/java/br/edu/ifnmg/SistemaComercial/LogicaAplicacao/TransacaoTipo.java
+/home/petronio/Desktop/SistemaExemplo_Comercial/SistemaComercial_LogicaAplicacao/src/main/java/br/edu/ifnmg/SistemaComercial/LogicaAplicacao/PessoaJuridicaRepositorio.java
 /home/petronio/Desktop/SistemaExemplo_Comercial/SistemaComercial_LogicaAplicacao/src/main/java/br/edu/ifnmg/SistemaComercial/LogicaAplicacao/TransacaoRepositorio.java
+/home/petronio/Desktop/SistemaExemplo_Comercial/SistemaComercial_LogicaAplicacao/src/main/java/br/edu/ifnmg/SistemaComercial/LogicaAplicacao/PessoaJuridica.java
 /home/petronio/Desktop/SistemaExemplo_Comercial/SistemaComercial_LogicaAplicacao/src/main/java/br/edu/ifnmg/SistemaComercial/LogicaAplicacao/Usuario.java

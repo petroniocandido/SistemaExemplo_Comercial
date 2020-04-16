@@ -22,7 +22,7 @@ import javax.persistence.Version;
  */
 @Entity
 @Table(name="pessoasjuridicas")
-@DiscriminatorValue(value = "2")
+@DiscriminatorValue(value = "1")
 public class PessoaJuridica extends Pessoa implements Serializable {
 
    @Column(nullable = false)
@@ -38,11 +38,23 @@ public class PessoaJuridica extends Pessoa implements Serializable {
 
     public PessoaJuridica() {
         super();
+        this.setTipo(PessoaTipo.Juridica);
         this.cnpj = "";
         this.inscricaoEstadual = "";
         this.representante = null;
         this.versao = 1;
     }
+
+    public PessoaJuridica(String nome, String cnpj, String inscricaoEstadual) {
+        super();
+        this.setTipo(PessoaTipo.Juridica);
+        this.setNome(nome);
+        this.cnpj = cnpj;
+        this.inscricaoEstadual = inscricaoEstadual;
+        this.versao = 1;
+    }
+    
+    
 
     public String getCnpj() {
         return cnpj;

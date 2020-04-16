@@ -13,6 +13,7 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Table;
+import javax.persistence.Version;
 
 /**
  *
@@ -20,10 +21,8 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "pessoasfisicas")
-@DiscriminatorValue(value = "1")
+@DiscriminatorValue(value = "0")
 public class PessoaFisica extends Pessoa implements Serializable {
-
-    private static final long serialVersionUID = 1L;
     
     @Column(length = 11, nullable=false, unique = true)
     private String cpf;
@@ -32,14 +31,29 @@ public class PessoaFisica extends Pessoa implements Serializable {
     
     @Enumerated(EnumType.STRING)
     private Genero genero;
+    
+    @Version
+    private long versao;
 
     public PessoaFisica() {
         super();
+        this.setTipo(PessoaTipo.Fisica);
         this.cpf = "";
         this.rg = "";
         this.genero = Genero.Feminino;
+        this.versao = 1;
     }
 
+    public PessoaFisica(String nome, String cpf, String rg, Genero genero) {
+        super();
+        this.setTipo(PessoaTipo.Fisica);
+        this.setNome(nome);
+        this.cpf = cpf;
+        this.rg = rg;
+        this.genero = genero;
+        this.versao = 1;
+    }
+    
     public String getCpf() {
         return cpf;
     }
