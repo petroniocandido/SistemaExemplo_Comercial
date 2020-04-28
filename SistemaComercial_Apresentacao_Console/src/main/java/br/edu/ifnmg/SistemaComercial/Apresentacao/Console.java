@@ -6,26 +6,32 @@
 package br.edu.ifnmg.SistemaComercial.Apresentacao;
 
 import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.Genero;
-import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.Pessoa;
 import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.PessoaFisica;
 import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.PessoaFisicaRepositorio;
 import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.PessoaJuridica;
 import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.PessoaJuridicaRepositorio;
-import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.PessoaRepositorio;
 import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.Produto;
 import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.ProdutoRepositorio;
+import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.RepositorioFactory;
 import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.Transacao;
 import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.TransacaoItem;
 import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.TransacaoRepositorio;
 import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.TransacaoTipo;
 import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.Usuario;
 import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.UsuarioRepositorio;
-import br.edu.ifnmg.SistemaComercial.Persistencia.PessoaDAO;
 import br.edu.ifnmg.SistemaComercial.Persistencia.PessoaFisicaDAO;
 import br.edu.ifnmg.SistemaComercial.Persistencia.PessoaJuridicaDAO;
 import br.edu.ifnmg.SistemaComercial.Persistencia.ProdutoDAO;
 import br.edu.ifnmg.SistemaComercial.Persistencia.TransacaoDAO;
 import br.edu.ifnmg.SistemaComercial.Persistencia.UsuarioDAO;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -102,14 +108,13 @@ public class Console {
     
     public static void main(String[] args) {
         
-        criarBase();
+        UsuarioRepositorio repo = RepositorioFactory.getUsuarioRepositorio();
         
-        PessoaFisicaRepositorio repo_pf = new PessoaFisicaDAO();
+        Usuario u = repo.Abrir(1L);
         
-        for(Pessoa pf : repo_pf.Buscar(new PessoaFisica("", null, null, Genero.Feminino))){
-            System.out.println(pf.getNome());
-        }
+        System.out.println(u.getLogin());
         
+    
     }
     
 }

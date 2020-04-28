@@ -10,6 +10,7 @@ br/edu/ifnmg/SistemaComercial/LogicaAplicacao/Produto_.class
 br/edu/ifnmg/SistemaComercial/LogicaAplicacao/PessoaFisica.class
 br/edu/ifnmg/SistemaComercial/LogicaAplicacao/PessoaTipo.class
 br/edu/ifnmg/SistemaComercial/LogicaAplicacao/PessoaJuridica.class
+br/edu/ifnmg/SistemaComercial/LogicaAplicacao/RepositorioFactory.class
 br/edu/ifnmg/SistemaComercial/LogicaAplicacao/PessoaFisicaRepositorio.class
 br/edu/ifnmg/SistemaComercial/LogicaAplicacao/Produto.class
 br/edu/ifnmg/SistemaComercial/LogicaAplicacao/UsuarioRepositorio.class

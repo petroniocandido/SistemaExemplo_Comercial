@@ -3,5 +3,6 @@
 /home/petronio/Desktop/SistemaExemplo_Comercial/SistemaComercial_Persistencia/src/main/java/br/edu/ifnmg/SistemaComercial/Persistencia/UsuarioDAO.java
 /home/petronio/Desktop/SistemaExemplo_Comercial/SistemaComercial_Persistencia/src/main/java/br/edu/ifnmg/SistemaComercial/Persistencia/PessoaFisicaDAO.java
 /home/petronio/Desktop/SistemaExemplo_Comercial/SistemaComercial_Persistencia/src/main/java/br/edu/ifnmg/SistemaComercial/Persistencia/ProdutoDAO.java
+/home/petronio/Desktop/SistemaExemplo_Comercial/SistemaComercial_Persistencia/src/main/java/br/edu/ifnmg/SistemaComercial/Persistencia/UsuarioDAOFake.java
 /home/petronio/Desktop/SistemaExemplo_Comercial/SistemaComercial_Persistencia/src/main/java/br/edu/ifnmg/SistemaComercial/Persistencia/PessoaJuridicaDAO.java
 /home/petronio/Desktop/SistemaExemplo_Comercial/SistemaComercial_Persistencia/src/main/java/br/edu/ifnmg/SistemaComercial/Persistencia/PessoaDAO.java

@@ -1,7 +1,8 @@
 br/edu/ifnmg/SistemaComercial/Persistencia/UsuarioDAO.class
-br/edu/ifnmg/SistemaComercial/Persistencia/PessoaFisicaDAO.class
 br/edu/ifnmg/SistemaComercial/Persistencia/PessoaJuridicaDAO.class
+br/edu/ifnmg/SistemaComercial/Persistencia/PessoaFisicaDAO.class
 br/edu/ifnmg/SistemaComercial/Persistencia/DataAccessObject.class
 br/edu/ifnmg/SistemaComercial/Persistencia/TransacaoDAO.class
+br/edu/ifnmg/SistemaComercial/Persistencia/UsuarioDAOFake.class
 br/edu/ifnmg/SistemaComercial/Persistencia/ProdutoDAO.class
 br/edu/ifnmg/SistemaComercial/Persistencia/PessoaDAO.class
