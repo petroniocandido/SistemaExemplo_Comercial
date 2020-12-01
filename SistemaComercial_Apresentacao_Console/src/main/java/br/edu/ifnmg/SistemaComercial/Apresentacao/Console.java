@@ -110,9 +110,11 @@ public class Console {
         
         UsuarioRepositorio repo = RepositorioFactory.getUsuarioRepositorio();
         
-        Usuario u = repo.Abrir(1L);
+        //criarBase();
         
-        System.out.println(u.getLogin());
+        //Usuario u = repo.Abrir(1L);
+        
+        System.out.println(repo.autenticar("caixa", "1234"));
         
     
     }

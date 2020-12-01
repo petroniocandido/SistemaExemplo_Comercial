@@ -7,8 +7,8 @@ br/edu/ifnmg/SistemaComercial/LogicaAplicacao/TransacaoItem_.class
 br/edu/ifnmg/SistemaComercial/LogicaAplicacao/Repositorio.class
 br/edu/ifnmg/SistemaComercial/LogicaAplicacao/Pessoa.class
 br/edu/ifnmg/SistemaComercial/LogicaAplicacao/Produto_.class
-br/edu/ifnmg/SistemaComercial/LogicaAplicacao/PessoaFisica.class
 br/edu/ifnmg/SistemaComercial/LogicaAplicacao/PessoaTipo.class
+br/edu/ifnmg/SistemaComercial/LogicaAplicacao/PessoaFisica.class
 br/edu/ifnmg/SistemaComercial/LogicaAplicacao/PessoaJuridica.class
 br/edu/ifnmg/SistemaComercial/LogicaAplicacao/RepositorioFactory.class
 br/edu/ifnmg/SistemaComercial/LogicaAplicacao/PessoaFisicaRepositorio.class
@@ -19,7 +19,7 @@ br/edu/ifnmg/SistemaComercial/LogicaAplicacao/Pessoa_.class
 br/edu/ifnmg/SistemaComercial/LogicaAplicacao/TransacaoTipo.class
 br/edu/ifnmg/SistemaComercial/LogicaAplicacao/PessoaRepositorio.class
 br/edu/ifnmg/SistemaComercial/LogicaAplicacao/Usuario_.class
-br/edu/ifnmg/SistemaComercial/LogicaAplicacao/ProdutoRepositorio.class
 br/edu/ifnmg/SistemaComercial/LogicaAplicacao/PessoaJuridica_.class
+br/edu/ifnmg/SistemaComercial/LogicaAplicacao/ProdutoRepositorio.class
 br/edu/ifnmg/SistemaComercial/LogicaAplicacao/PessoaFisica_.class
 br/edu/ifnmg/SistemaComercial/LogicaAplicacao/Transacao_.class
