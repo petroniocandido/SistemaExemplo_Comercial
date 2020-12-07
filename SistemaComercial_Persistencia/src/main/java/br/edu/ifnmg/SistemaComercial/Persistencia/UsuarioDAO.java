@@ -7,6 +7,7 @@ package br.edu.ifnmg.SistemaComercial.Persistencia;
 
 import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.Usuario;
 import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.UsuarioRepositorio;
+import java.util.HashMap;
 import java.util.List;
 import javax.persistence.Query;
 
@@ -36,7 +37,42 @@ public class UsuarioDAO
 
     @Override
     public List<Usuario> Buscar(Usuario obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        // Consulta JPQL padrão
+        String jpql = "select o from Usuario o";
+        
+        // Dicionário de parâmetros
+        HashMap<String, Object> parametros = new HashMap<>();
+        
+        // Verifico quais os valores que existem no obj
+        if(obj != null){
+            if(obj.getLogin() != null & !obj.getLogin().isEmpty())
+                parametros.put("login", obj.getLogin());
+            if(obj.getId() > 0)
+                parametros.put("id", obj.getId());
+        }
+        
+        // Crio a parte da JPQL que contém os filtros
+        if(!parametros.isEmpty()){
+            String filtros = "";
+            jpql += " where ";
+            for(String campo : parametros.keySet()){
+                if(!filtros.isEmpty())
+                    filtros += " and ";
+                jpql += "o." + campo + " = :" + campo;
+            }
+            jpql += filtros;
+        }
+        
+        Query sql = this.manager.createQuery(jpql);
+        
+        if(!parametros.isEmpty())
+            for(String campo : parametros.keySet())
+                sql.setParameter(campo, parametros.get(campo));
+            
+        
+        return sql.getResultList();
+            
     }
     
 }

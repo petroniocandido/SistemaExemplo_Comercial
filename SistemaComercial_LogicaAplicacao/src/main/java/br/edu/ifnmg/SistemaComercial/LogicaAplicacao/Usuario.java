@@ -44,12 +44,14 @@ public class Usuario implements Serializable {
     private long versao;
     
     public Usuario() {
+        this.id = 0L;
         this.login = "";
         this.senha = "";
         this.ultimoAcesso = new Date();
     }
 
     public Usuario(String login, String senha) {
+        this.id = 0L;
         this.login = login;
         this.senha = senha;
     }

@@ -112,9 +112,13 @@ public class Console {
         
         //criarBase();
         
-        //Usuario u = repo.Abrir(1L);
+        Usuario uw = new Usuario();
+        uw.setLogin("caixa");
         
-        System.out.println(repo.autenticar("caixa", "1234"));
+        //System.out.println(repo.autenticar("caixa", "1234"));
+        
+        for(Usuario u : repo.Buscar(uw))
+            System.out.println(u);
         
     
     }
