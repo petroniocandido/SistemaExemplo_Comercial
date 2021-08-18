@@ -1,8 +1,8 @@
-/home/petronio/dados/projects/SistemaExemplo_Comercial/SistemaComercial_Persistencia/src/main/java/br/edu/ifnmg/SistemaComercial/Persistencia/ProdutoDAO.java
-/home/petronio/dados/projects/SistemaExemplo_Comercial/SistemaComercial_Persistencia/src/main/java/br/edu/ifnmg/SistemaComercial/Persistencia/PessoaJuridicaDAO.java
-/home/petronio/dados/projects/SistemaExemplo_Comercial/SistemaComercial_Persistencia/src/main/java/br/edu/ifnmg/SistemaComercial/Persistencia/UsuarioDAO.java
-/home/petronio/dados/projects/SistemaExemplo_Comercial/SistemaComercial_Persistencia/src/main/java/br/edu/ifnmg/SistemaComercial/Persistencia/PessoaFisicaDAO.java
-/home/petronio/dados/projects/SistemaExemplo_Comercial/SistemaComercial_Persistencia/src/main/java/br/edu/ifnmg/SistemaComercial/Persistencia/UsuarioDAOFake.java
-/home/petronio/dados/projects/SistemaExemplo_Comercial/SistemaComercial_Persistencia/src/main/java/br/edu/ifnmg/SistemaComercial/Persistencia/TransacaoDAO.java
-/home/petronio/dados/projects/SistemaExemplo_Comercial/SistemaComercial_Persistencia/src/main/java/br/edu/ifnmg/SistemaComercial/Persistencia/PessoaDAO.java
-/home/petronio/dados/projects/SistemaExemplo_Comercial/SistemaComercial_Persistencia/src/main/java/br/edu/ifnmg/SistemaComercial/Persistencia/DataAccessObject.java
+/home/petronio/dados/Projetos/SistemaExemplo_Comercial/SistemaComercial_Persistencia/src/main/java/br/edu/ifnmg/SistemaComercial/Persistencia/UsuarioDAOFake.java
+/home/petronio/dados/Projetos/SistemaExemplo_Comercial/SistemaComercial_Persistencia/src/main/java/br/edu/ifnmg/SistemaComercial/Persistencia/PessoaFisicaDAO.java
+/home/petronio/dados/Projetos/SistemaExemplo_Comercial/SistemaComercial_Persistencia/src/main/java/br/edu/ifnmg/SistemaComercial/Persistencia/PessoaDAO.java
+/home/petronio/dados/Projetos/SistemaExemplo_Comercial/SistemaComercial_Persistencia/src/main/java/br/edu/ifnmg/SistemaComercial/Persistencia/DataAccessObject.java
+/home/petronio/dados/Projetos/SistemaExemplo_Comercial/SistemaComercial_Persistencia/src/main/java/br/edu/ifnmg/SistemaComercial/Persistencia/PessoaJuridicaDAO.java
+/home/petronio/dados/Projetos/SistemaExemplo_Comercial/SistemaComercial_Persistencia/src/main/java/br/edu/ifnmg/SistemaComercial/Persistencia/ProdutoDAO.java
+/home/petronio/dados/Projetos/SistemaExemplo_Comercial/SistemaComercial_Persistencia/src/main/java/br/edu/ifnmg/SistemaComercial/Persistencia/TransacaoDAO.java
+/home/petronio/dados/Projetos/SistemaExemplo_Comercial/SistemaComercial_Persistencia/src/main/java/br/edu/ifnmg/SistemaComercial/Persistencia/UsuarioDAO.java

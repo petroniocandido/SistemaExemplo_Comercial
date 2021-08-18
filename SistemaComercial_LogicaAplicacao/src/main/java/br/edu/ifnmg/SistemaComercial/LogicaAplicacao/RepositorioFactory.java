@@ -72,4 +72,36 @@ public class RepositorioFactory {
         return usuario;
     }
     
+    public static PessoaFisicaRepositorio getPessoaFisicaRepositorio() {
+        if(pessoafisica == null){
+            String nomeclasse = propriedades.getProperty("PessoaFisicaRepositorio");
+            pessoafisica = (PessoaFisicaRepositorio) getInstancia(nomeclasse);
+        }
+        return pessoafisica;
+    }
+    
+    public static PessoaJuridicaRepositorio getPessoaJuridicaRepositorio() {
+        if(pessoajuridica == null){
+            String nomeclasse = propriedades.getProperty("PessoaJuridicaRepositorio");
+            pessoajuridica = (PessoaJuridicaRepositorio) getInstancia(nomeclasse);
+        }
+        return pessoajuridica;
+    }
+    
+    public static ProdutoRepositorio getProdutoRepositorio() {
+        if(produto == null){
+            String nomeclasse = propriedades.getProperty("ProdutoRepositorio");
+            produto = (ProdutoRepositorio) getInstancia(nomeclasse);
+        }
+        return produto;
+    }
+    
+    public static TransacaoRepositorio getTransacaoRepositorio() {
+        if(transacao == null){
+            String nomeclasse = propriedades.getProperty("TransacaoRepositorio");
+            transacao = (TransacaoRepositorio) getInstancia(nomeclasse);
+        }
+        return transacao;
+    }
+    
 }

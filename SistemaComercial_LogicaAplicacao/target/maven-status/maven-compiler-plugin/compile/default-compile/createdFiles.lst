@@ -16,10 +16,10 @@ br/edu/ifnmg/SistemaComercial/LogicaAplicacao/Produto.class
 br/edu/ifnmg/SistemaComercial/LogicaAplicacao/UsuarioRepositorio.class
 br/edu/ifnmg/SistemaComercial/LogicaAplicacao/Genero.class
 br/edu/ifnmg/SistemaComercial/LogicaAplicacao/Pessoa_.class
-br/edu/ifnmg/SistemaComercial/LogicaAplicacao/TransacaoTipo.class
 br/edu/ifnmg/SistemaComercial/LogicaAplicacao/PessoaRepositorio.class
+br/edu/ifnmg/SistemaComercial/LogicaAplicacao/TransacaoTipo.class
 br/edu/ifnmg/SistemaComercial/LogicaAplicacao/Usuario_.class
-br/edu/ifnmg/SistemaComercial/LogicaAplicacao/PessoaJuridica_.class
 br/edu/ifnmg/SistemaComercial/LogicaAplicacao/ProdutoRepositorio.class
+br/edu/ifnmg/SistemaComercial/LogicaAplicacao/PessoaJuridica_.class
 br/edu/ifnmg/SistemaComercial/LogicaAplicacao/PessoaFisica_.class
 br/edu/ifnmg/SistemaComercial/LogicaAplicacao/Transacao_.class

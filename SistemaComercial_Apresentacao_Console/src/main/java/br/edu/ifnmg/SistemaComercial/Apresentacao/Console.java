@@ -19,19 +19,6 @@ import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.TransacaoRepositorio;
 import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.TransacaoTipo;
 import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.Usuario;
 import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.UsuarioRepositorio;
-import br.edu.ifnmg.SistemaComercial.Persistencia.PessoaFisicaDAO;
-import br.edu.ifnmg.SistemaComercial.Persistencia.PessoaJuridicaDAO;
-import br.edu.ifnmg.SistemaComercial.Persistencia.ProdutoDAO;
-import br.edu.ifnmg.SistemaComercial.Persistencia.TransacaoDAO;
-import br.edu.ifnmg.SistemaComercial.Persistencia.UsuarioDAO;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -44,22 +31,22 @@ public class Console {
      */
     
     public static void criarBase(){
-        UsuarioRepositorio repou = new UsuarioDAO();
+        UsuarioRepositorio repou = RepositorioFactory.getUsuarioRepositorio();
         repou.Salvar(new Usuario("caixa", "123"));
         repou.Salvar(new Usuario("gerente", "123"));
         
-        PessoaFisicaRepositorio repof = new PessoaFisicaDAO();
+        PessoaFisicaRepositorio repof = RepositorioFactory.getPessoaFisicaRepositorio();
         repof.Salvar(new PessoaFisica("João","11111111111", "10123456",Genero.Masculino));
         repof.Salvar(new PessoaFisica("Maria","11111111112", "10123457",Genero.Feminino));
         repof.Salvar(new PessoaFisica("José","11111111113", "10123458",Genero.Masculino));
         repof.Salvar(new PessoaFisica("Ana","11111111114", "10123459",Genero.Feminino));
         
-        PessoaJuridicaRepositorio repoj = new PessoaJuridicaDAO();
+        PessoaJuridicaRepositorio repoj = RepositorioFactory.getPessoaJuridicaRepositorio();
         repoj.Salvar(new PessoaJuridica("Padaria", "111111111", "00001111000"));
         repoj.Salvar(new PessoaJuridica("Confeitaria", "111111112", "00001111001"));
         repoj.Salvar(new PessoaJuridica("Mercearia", "111111113", "00001111002"));
         
-        ProdutoRepositorio repop = new ProdutoDAO();
+        ProdutoRepositorio repop = RepositorioFactory.getProdutoRepositorio();
         repop.Salvar(new Produto("Farinha de Trigo", "5.00", 10));
         repop.Salvar(new Produto("Açúcar", "3.50", 10));
         repop.Salvar(new Produto("Sal", "1.50", 10));
@@ -79,7 +66,7 @@ public class Console {
         var prod3 = repop.Abrir(3L);
         var prod4 = repop.Abrir(4L);
         
-        TransacaoRepositorio repot = new TransacaoDAO();
+        TransacaoRepositorio repot = RepositorioFactory.getTransacaoRepositorio();
         
         Transacao t1 = new Transacao(pf1, TransacaoTipo.Venda, user1);
         t1.add(new TransacaoItem(prod1, 1));
@@ -107,19 +94,22 @@ public class Console {
     }
     
     public static void main(String[] args) {
+        //criarBase();
         
         UsuarioRepositorio repo = RepositorioFactory.getUsuarioRepositorio();
         
-        //criarBase();
-        
         Usuario uw = new Usuario();
         uw.setLogin("caixa");
+        uw.setSenha("123");
+        
+        repo.Salvar(uw);
         
         //System.out.println(repo.autenticar("caixa", "1234"));
         
+        /*
         for(Usuario u : repo.Buscar(uw))
             System.out.println(u);
-        
+       */
     
     }
     
