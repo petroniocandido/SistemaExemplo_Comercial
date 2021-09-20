@@ -19,6 +19,11 @@ import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.TransacaoRepositorio;
 import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.TransacaoTipo;
 import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.Usuario;
 import br.edu.ifnmg.SistemaComercial.LogicaAplicacao.UsuarioRepositorio;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -94,8 +99,19 @@ public class Console {
     }
     
     public static void main(String[] args) {
-        //criarBase();
+        File arquivoPropriedades = new File("Relatorios/teste.txt");
+        FileReader leitorArquivo;
+        try { 
+            leitorArquivo = new FileReader(arquivoPropriedades);
+            System.out.println(leitorArquivo.toString());
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Console.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
+        //String.class.getResourceAsStream("newfile")
+
+        //criarBase();
+        /*
         UsuarioRepositorio repo = RepositorioFactory.getUsuarioRepositorio();
         
         Usuario uw = new Usuario();
@@ -103,7 +119,7 @@ public class Console {
         uw.setSenha("123");
         
         repo.Salvar(uw);
-        
+        */
         //System.out.println(repo.autenticar("caixa", "1234"));
         
         /*
