@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jdbcDataAdapter class="net.sf.jasperreports.data.jdbc.JdbcDataAdapterImpl"><name>Sistema Exemplo DSC - Sistema Comercial</name><driver>com.mysql.jdbc.Driver</driver><username>dsc</username><password>123</password><savePassword>true</savePassword><url>jdbc:mysql://localhost/SistemaComercial</url><database></database><serverAddress></serverAddress><classpath>/usr/share/java/mysql-connector-java-8.0.26.jar</classpath></jdbcDataAdapter>

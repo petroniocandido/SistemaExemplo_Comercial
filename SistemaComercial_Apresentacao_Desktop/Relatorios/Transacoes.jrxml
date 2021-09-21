@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Vendas" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dbb4fd8b-c6eb-41dd-8912-e42876d90bb7">
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[YFNpc3RlbWFDb21lcmNpYWxgLnRyYW5zYWNvZXMgQVMgLDI0Miw3NyxlZTNhMmVlOC0xZmYzLTQ1
+M2MtOGZlMC0xM2QwZGEzNGIyOGQ7YFNpc3RlbWFDb21lcmNpYWxgLnBlc3NvYXMgQVMgLDQxLDQw
+LDc1ZjFjMzVkLTAxMTktNGMxMi1iODc1LTQ1NTA4OGU3YWY1NTs=]]>
+	</property>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SistemaComercial.xml"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT `SistemaComercial`.transacoes.pessoa_id,
+	`SistemaComercial`.pessoas.tipo,
+	`SistemaComercial`.pessoas.`NOME`,
+	`SistemaComercial`.transacoes.`TIPO`,
+	`SistemaComercial`.transacoes.`VALORTOTAL`,
+	`SistemaComercial`.transacoes.`CRIACAO`
+FROM `SistemaComercial`.pessoas
+	INNER JOIN `SistemaComercial`.transacoes ON 
+	 `SistemaComercial`.transacoes.pessoa_id = `SistemaComercial`.pessoas.`ID`]]>
+	</queryString>
+	<field name="pessoa_id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="pessoa_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="pessoa_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="transacoes"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="tipo"/>
+		<property name="com.jaspersoft.studio.field.label" value="tipo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoas"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NOME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NOME"/>
+		<property name="com.jaspersoft.studio.field.label" value="NOME"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoas"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TIPO" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="TIPO"/>
+		<property name="com.jaspersoft.studio.field.label" value="TIPO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="transacoes"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="VALORTOTAL" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="VALORTOTAL"/>
+		<property name="com.jaspersoft.studio.field.label" value="VALORTOTAL"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="transacoes"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CRIACAO" class="java.time.LocalDateTime">
+		<property name="com.jaspersoft.studio.field.name" value="CRIACAO"/>
+		<property name="com.jaspersoft.studio.field.label" value="CRIACAO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="transacoes"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<sortField name="CRIACAO" order="Descending"/>
+	<sortField name="tipo" order="Descending"/>
+	<sortField name="NOME" order="Descending"/>
+	<sortField name="TIPO" order="Descending"/>
+	<variable name="VALORTOTAL1" class="java.math.BigDecimal" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{VALORTOTAL}]]></variableExpression>
+	</variable>
+	<group name="CRIACAO">
+		<groupExpression><![CDATA[$F{CRIACAO}]]></groupExpression>
+	</group>
+	<group name="tipo">
+		<groupExpression><![CDATA[$F{tipo}]]></groupExpression>
+	</group>
+	<group name="NOME">
+		<groupExpression><![CDATA[$F{NOME}]]></groupExpression>
+	</group>
+	<group name="TIPO">
+		<groupExpression><![CDATA[$F{TIPO}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="67" splitType="Stretch">
+			<staticText>
+				<reportElement x="-1" y="10" width="560" height="48" uuid="ffbf48d2-6769-43e0-be2a-f0a46e531b50"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="26"/>
+				</textElement>
+				<text><![CDATA[Relatório de Transações]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="-1" y="0" width="276" height="30" uuid="d343d772-4901-4417-806b-dba3bd91f720">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d92107ca-4189-4202-b82d-dd4bf56ec9dc"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="276" y="0" width="118" height="30" uuid="c9399c98-cf90-4391-88d6-5e24eca5a766">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e14aa8cb-ccd9-47f1-913a-e7b1da98e2ea"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="394" y="0" width="154" height="30" uuid="7c24704f-259f-43cb-82d3-fdb0affaa4a7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ce62f756-12e8-4687-89ac-a4056d4db634"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[VALOR  TOTAL]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="-1" y="0" width="276" height="20" uuid="fa08888b-5c65-4c24-afe8-0be83abef01c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d92107ca-4189-4202-b82d-dd4bf56ec9dc"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NOME}]]></textFieldExpression>
+			</textField>
+			<textField pattern="M/d/yy">
+				<reportElement x="275" y="-1" width="118" height="20" uuid="2521ade5-8833-4170-9814-4a3f28a35211">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e14aa8cb-ccd9-47f1-913a-e7b1da98e2ea"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{CRIACAO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="394" y="0" width="154" height="20" uuid="5f0aff1b-9637-49ba-9498-33c2b0eb8171">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ce62f756-12e8-4687-89ac-a4056d4db634"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{VALORTOTAL}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="51" splitType="Stretch">
+			<textField>
+				<reportElement x="394" y="7" width="100" height="30" uuid="5a6f2632-35b2-4501-8c04-92c5bb20ad17"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{VALORTOTAL1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="290" y="7" width="100" height="30" uuid="a21a3bba-29ba-4c2a-a266-ddb33d5550e3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>
