@@ -48,7 +48,7 @@ FROM `SistemaComercial`.pessoas
 		<property name="com.jaspersoft.studio.field.tree.path" value="transacoes"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="CRIACAO" class="java.time.LocalDateTime">
+	<field name="CRIACAO" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.name" value="CRIACAO"/>
 		<property name="com.jaspersoft.studio.field.label" value="CRIACAO"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="transacoes"/>
